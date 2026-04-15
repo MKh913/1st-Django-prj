@@ -6,6 +6,7 @@ from .views import*
 urlpatterns = [
     path("admin/", admin.site.urls),
     
-    path("HTTP test", http_test),
-    path("JSON test", json_test)
+    path("", home),
+    path("contact", contact),
+    path("about", about)
 ]
