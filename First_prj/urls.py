@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import*
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from .views import*
 
 urlpatterns = [
@@ -26,3 +29,6 @@ urlpatterns = [
     path("contact", contact),
     path("about", about)
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #For statics
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #For medias
