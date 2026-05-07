@@ -21,13 +21,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from .views import*
-
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    path("", home),
-    path("contact", contact),
-    path("about", about)
+    path("", include("main.urls")),
+    path("blog/", include("blog.urls")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #For statics

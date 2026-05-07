@@ -1,0 +1,12 @@
+Use this for templates:
+
+«
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+{% endblock %}
+»w
