@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Contact(models.Model):
+class contact(models.Model):
     name=models.CharField(max_length=25)
     email=models.EmailField()
     subject=models.CharField(max_length=25)
@@ -9,3 +9,9 @@ class Contact(models.Model):
     
     created_date=models.DateTimeField(auto_now_add=True)
     updated_date=models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering=["-created_date"]
+    
+    def __str__(self):
+        return f"{self.name}"

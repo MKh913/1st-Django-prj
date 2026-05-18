@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Post(models.Model):
+class post(models.Model):
     title=models.CharField(max_length=50)
     content=models.TextField()
     #author=models.CharField(max_length=25)
@@ -12,6 +12,12 @@ class Post(models.Model):
     #category=models.CharField(max_length=25)
     #tag=models.CharField(max_length=25)
     
-    created_date=models.DateField(auto_now_add=True)
-    updated_date=models.DateField(auto_now=True)
-    published_date=models.DateField(null=True)
+    created_date=models.DateTimeField(auto_now_add=True)
+    updated_date=models.DateTimeField(auto_now=True)
+    published_date=models.DateTimeField(null=True)
+
+    class Meta:
+        ordering=["-created_date"]#, "author"]
+    
+    def __str__(self):
+        return f"{self.id}; {self.title}"
