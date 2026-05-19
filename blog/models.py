@@ -17,7 +17,7 @@ class post(models.Model):
     published_date=models.DateTimeField(null=True)
 
     class Meta:
-        ordering=["-created_date"]#, "author"]
+        ordering=["created_date"]#, "author"]
     
     def __str__(self):
         return f"{self.id}; {self.title}"

@@ -6,5 +6,5 @@ app_name="blog"
 from .views import*
 urlpatterns = [
     path("", home, name="home"),
-    path("single", single, name="single"),
+    path("<int:id>", single, name="single"),
 ]
