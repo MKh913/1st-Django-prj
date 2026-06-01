@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     "main",
     "blog",
+
+    'django.contrib.humanize', #For blog app
 ]
 
 MIDDLEWARE = [
