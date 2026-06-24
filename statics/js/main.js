@@ -95,7 +95,7 @@ $(document).ready(function() {
 
         $('.active-recent-blog-carusel').owlCarousel({
             items: 3,
-            loop: true,
+            loop: false,
             margin: 30,
             dots: true,
             autoplayHoverPause: true, 
