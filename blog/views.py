@@ -9,10 +9,10 @@ from templates import*
 
 def home(request, **kwargs):
     if kwargs.get("cat_name")!=None: #categories func
-        posts=models.post.owbjects.filter(status=1, category__name=kwargs["cat_name"])
+        posts=models.post.objects.filter(status=1, category__name=kwargs["cat_name"])
     
-    if kwargs.get("auth_username")!=None: #authors func
-        posts=models.objects.filter(status=1, author__username=kwargs["auth_username"])
+    elif kwargs.get("auth_username")!=None: #authors func
+        posts=models.post.objects.filter(status=1, author__username=kwargs["auth_username"])
 
     else: #main
         posts=models.post.objects.filter(status=1)
@@ -27,7 +27,7 @@ def home(request, **kwargs):
         posts=posts.get_page(1)
     
     except EmptyPage:
-        posts=paginator.page(paginator.num_pages)
+        posts=posts.get_page(posts.paginator.num_pages)
 
     context={"posts": posts}
     return render(request, "blog/home.html", context)

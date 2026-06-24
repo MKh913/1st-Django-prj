@@ -3555,6 +3555,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-bottom: 1px solid #eee;
 }
 
+.user-info-widget img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .widget-wrap .single-sidebar-widget:last-child {
   border-bottom: none;
   margin-bottom: 0px;
